@@ -37,7 +37,7 @@
 
     <main>
         <!-- banner section -->
-        <section class=" mt-10 bg-[url('/images/Rectangle.png')] bg-auto bg-cover bg-center bg-no-repeat p-20 ">
+        <section class=" mt-10 bg-[url('./images/Rectangle.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-20 ">
             <div class="space-y-5 lg:flex justify-between">
                 <!-- left side -->
                 <div class="space-y-9">
@@ -72,7 +72,6 @@
                         <p>01</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -90,7 +89,8 @@
                 <div class="flex">
                     <div class="bg-slate-100 shadow-xl rounded-2xl flex gap-5 border p-5">
                         <div class="relative">
-                            <img class=" h-10 lg:h-16 w-28 lg:w-16" src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg" alt="">
+                            <img class=" h-10 lg:h-16 w-28 lg:w-16"
+                                src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg" alt="">
                             <div class="absolute top-0 right-0">
                                 <input type="radio" name="radio-2" class="radio radio-success" checked />
                             </div>
@@ -146,9 +146,21 @@
         </section>
 
         <!-- join our forum -->
-        <section class=" hidden bg-[url('./images/joinforum.png')]">
-            <h2>JOin Our Forum</h2>
-            
+        <section class=" bg-[url('./images/Rectangle.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-5 mb-10">
+            <div class="lg:flex justify-between items-center">
+                <div class="text-white space-y-5 p-7 lg:p-20">
+                    <h2 class="text-3xl font-bold">Join Our Forum</h2>
+                    <p>Step into the vibrant community of our retro forum, where enthusiasts unite to celebrate the <br>
+                        timeless allure of all things vintage. Whether you're a seasoned collector, a nostalgic gamer,
+                        or <br> simply someone who appreciates the charm of yesteryear, our forum welcomes you with open
+                        arms.</p>
+                    <button class="btn btn-info text-white rounded-l-full rounded-r-full">Registered Now</button>
+                </div>
+                <div>
+                    <img src="./images/joinforum.png" alt="">
+                </div>
+            </div>
+
         </section>
     </main>
 
