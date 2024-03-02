@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme = "light">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -8,36 +8,38 @@
     <!-- daisy ui and tailwind css -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/b86594bddf.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header class="container mx-auto">
+<body  class="container m-auto">
+    <header>
         <!-- nav bar -->
-        <div class="navbar bg-base-100">
-            <div class="flex-1">
-              <a class="btn btn-ghost text-xl">daisyUI</a>
+        <nav class="mt-5">
+            <div class="flex items-center">
+                <div class="flex-1">
+                    <a class="btn btn-ghost text-2xl font-bold">Retro</a>
+                </div>
+                <div class="flex space-x-10">
+                    <div class="space-x-3">
+                        <i title="Home" class="fa-solid fa-house rounded-full bg-white border p-2"></i>
+                        <i title="Edit" class="fa-solid fa-pencil rounded-full bg-white border p-2"></i>
+                        <i title="Add" class="fa-regular fa-user rounded-full bg-white border p-2"></i>
+                        <i title="Flag" class="fa-solid fa-flag rounded-full bg-white border p-2"></i>
+                    </div>
+                    <div>
+                        <a class="btn btn-info rounded-l-full rounded-r-full px-7 text-white">Sign in</a>
+                    </div>
+                </div>
             </div>
-            <div class="flex-none">
-              <ul class="menu menu-horizontal px-1">
-                <li><a>Link</a></li>
-                <li>
-                  <details>
-                    <summary>
-                      Parent
-                    </summary>
-                    <ul class="p-2 bg-base-100 rounded-t-none">
-                      <li><a>Link 1</a></li>
-                      <li><a>Link 2</a></li>
-                    </ul>
-                  </details>
-                </li>
-              </ul>
-            </div>
-          </div>
+        </nav>
     </header>
 
     <main>
-        
+        <!-- banner section -->
+        <section class="bg-[url('./images/Rectangle 1.png')]">
+            <h2>Welcome to the Retro Forum</h2>
+        </section>
     </main>
 
     <footer>
