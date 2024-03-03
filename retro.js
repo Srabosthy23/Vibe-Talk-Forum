@@ -40,7 +40,7 @@ const loadAllPost = async (searchText) => {
                         <p>${post.description}</p>
                         <hr class="mt-5 mb-5 border-dashed border-2">
                         <div class="flex justify-between">
-                        <!-- comment, view, type -->
+                        
                             <div class="flex gap-7">
                                 <div class="flex items-center gap-3">
                                     <i class="fa-regular fa-comment"></i>
@@ -55,9 +55,9 @@ const loadAllPost = async (searchText) => {
                                     <p>${post.posted_time}</p>
                                 </div>
                             </div>
-                        <!-- read post -->
+                        
                         <div>
-                            <button onclick="check('${post.title}', ${post.view_count})" class ="btn"><i class="fa-regular fa-envelope text-2xl"></i></button>    
+                            <button onclick="check('${post.title.replace(/'/g,'')}' , ${post.view_count})" class ="btn rounded-full"><i class="fa-regular fa-envelope text-2xl"></i></button>    
                         </div>
                     </div>
                 </div>
@@ -75,6 +75,9 @@ const loadAllPost = async (searchText) => {
 
 // latestPost Function
 const latestPost = async () => {
+    const spinner2 = document.getElementById("spinner2");
+    spinner2.classList.remove("hidden")  
+
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
     const data = await res.json();
     // console.log(data)
@@ -82,6 +85,7 @@ const latestPost = async () => {
     const latestPostContainer = document.getElementById('latest-post-container')
 
     data.forEach((info) => {
+        spinner2.classList.add("hidden") 
         const latestPostInfo = document.createElement("div")
         latestPostInfo.className = "card bg-base-100 shadow-xl p-5"
         latestPostInfo.innerHTML = `
