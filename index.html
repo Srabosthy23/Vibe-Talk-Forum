@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Forum</title>
+    <title>Vibe Talk</title>
     <!-- daisy ui and tailwind css -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,14 +13,14 @@
 </head>
 
 <body>
+    <!-- nav bar -->
     <header class="container m-auto">
-        <!-- nav bar -->
         <nav class="mt-5">
-            <div class="flex items-center">
-                <div class="flex-1">
-                    <a class="btn btn-ghost text-2xl font-bold">Retro</a>
+            <div class="text-center lg:text-start lg:flex items-center space-y-3">
+                <div class="lg:flex-1">
+                    <a class="btn btn-ghost text-3xl font-bold">Vibe Talk <span class="text-blue-500 text-3xl">☆</span></a>
                 </div>
-                <div class="flex space-x-10">
+                <div class="lg:flex space-y-3 space-x-10 items-center">
                     <div class="space-x-3">
                         <i title="Home" class="fa-solid fa-house rounded-full bg-white border p-2"></i>
                         <i title="Edit" class="fa-solid fa-pencil rounded-full bg-white border p-2"></i>
@@ -38,25 +38,24 @@
     <main class="container m-auto">
         <!-- banner section -->
         <section
-            class=" mt-10 bg-[#12132D] bg-[url('./images/bgbanner.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-28 ">
+            class=" mt-10 bg-[#12132D] bg-[url('./images/bgbanner.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-10 lg:p-28 ">
             <div class="space-y-5 lg:flex justify-between">
                 <!-- left side -->
-                <div class="space-y-9">
-                    <h6 class="text-white text-5xl font-bold">Welcome to the <br><span
-                            class="text-blue-500">Retro</span>
-                        Forum</h6>
-                    <p class="text-white">Welcome to the vibrant world of retro forums, where nostalgia and <br> passion
+                <div class="space-y-4 lg:space-y-9">
+                    <h6 class="text-white text-2xl lg:text-5xl font-bold">Welcome to the </h6>
+                    <p class="text-white text-2xl lg:text-5xl font-bold"><span class="text-blue-500 text-3xl lg:text-6xl font-bold">Vibe Talk </span>Forum</p>
+                    <p class="text-white">Welcome to the vibrant world of Vibe Talk forums, where nostalgia and <br> passion
                         collide in a digital time capsule. </p>
-                    <div>
-                        <input id="search-field" class="p-3 rounded-l-full rounded-r-full w-1/2" type="text"
+                    <div class="relative  lg:w-full">
+                        <input id="search-field" class="p-3 rounded-l-full rounded-r-full   lg:w-full " type="text"
                             placeholder="Search category">
                         <button onclick="searchCategory()"
-                            class="btn btn-info w-32 text-white rounded-l-full rounded-r-full">Search</button>
+                            class="btn btn-info lg:w-32 text-white rounded-l-full rounded-r-full absolute right-20 lg:right-0">Search</button>
                     </div>
                 </div>
                 <!-- right side -->
 
-                <div class="lg:w-80 space-y-5 bg-base-100 shadow-xl p-10 rounded font-medium">
+                <div class="lg:w-80 space-y-7 bg-base-100 shadow-xl p-10  rounded font-medium">
                     <div class="flex justify-between">
                         <p>Registered Users</p>
                         <p>01</p>
@@ -81,7 +80,7 @@
         <section class="mt-10 mb-10">
             <div class="space-y-8">
                 <h6 class="text-center text-4xl font-bold">Let's Discuss</h6>
-                <p class="text-center w-1/2 mx-auto">In the bustling corridors of the retro forum, discussions take on a
+                <p class="text-center lg:w-1/2 mx-auto">In the bustling corridors of the vibe talk forum, discussions take on a
                     unique charm
                     that transcends time. Here, enthusiasts from across the digital landscape converge to explore the
                     treasures of bygone eras.</p>
@@ -119,13 +118,12 @@
 
         <!-- join our forum -->
         <section
-            class=" bg-[url('./images/Rectangle.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-5 mb-10">
+            class=" bg-[url('./images/Rectangle.png')] rounded-3xl bg-auto bg-cover bg-center bg-no-repeat p-10 mb-10">
             <div class="lg:flex justify-between items-center">
-                <div class="text-white space-y-5 p-7 lg:p-20">
+                <div class="text-white space-y-5 p-7 lg:p-20 lg:w-2/3">
                     <h2 class="text-3xl font-bold">Join Our Forum</h2>
-                    <p>Step into the vibrant community of our retro forum, where enthusiasts unite to celebrate the <br>
-                        timeless allure of all things vintage. Whether you're a seasoned collector, a nostalgic gamer,
-                        or <br> simply someone who appreciates the charm of yesteryear, our forum welcomes you with open
+                    <p>Step into the vibrant community of our vibe talk forum, where enthusiasts unite to celebrate the timeless allure of all things vintage. Whether you're a seasoned collector, a nostalgic gamer,
+                        or someone who appreciates the charm of yesteryear, our forum welcomes you with open
                         arms.</p>
                     <button class="btn btn-info text-white rounded-l-full rounded-r-full">Registered Now</button>
                 </div>
@@ -140,9 +138,9 @@
         <section class="mb-10">
             <div class="text-center mb-10 space-y-5">
                 <h2 class="text-3xl font-bold">Latest Posts</h2>
-                <p class="w-1/2 mx-auto">
+                <p class="lg:w-1/2 mx-auto">
                     In our latest forum post, the community is buzzing with excitement as members delve into a spirited
-                    discussion about the resurgence of retro gaming. </p>
+                    discussion about the resurgence of vibe talk gaming. </p>
             </div>
             <!-- card dynamically -->
             <div id="latest-post-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -154,8 +152,8 @@
     <!-- footer section -->
     <footer class=" p-20 bg-base-300 text-base-content">
         <div class="text-center space-y-5">
-            <h2 class="text-2xl font-bold">ReTro</h2>
-            <p class="w-1/2 mx-auto">Explore the essence of nostalgia in our retro forum, where every pixel holds a
+            <h2 class="text-2xl font-bold">Vibe Talk</h2>
+            <p class="lg:w-1/2 mx-auto">Explore the essence of nostalgia in our vibe talk forum, where every pixel holds a
                 story and every byte
                 resonates with the timeless charm of the past.</p>
 
@@ -166,7 +164,7 @@
                 <i class="text-2xl fa-brands fa-github-alt"></i>
             </div>
             <hr class="mt-5 mb-5 border-dashed border bg-slate-400">
-            <p>2017, All Rights eserved</p>
+            <p>2017, All Rights reserved</p>
 
         </div>
     </footer>
