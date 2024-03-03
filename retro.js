@@ -1,17 +1,19 @@
 // loadAllPost function
-const loadAllPost = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
+const loadAllPost = async (searchText) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
     const data = await res.json();
     const posts = data.posts
-    console.log(posts)
+    // console.log(posts)
 
     const postContainer = document.getElementById('post-container')
+    postContainer.innerHTML = ''
     
 
     posts.forEach((post) => {
             // console.log(post)
             const postInfo = document.createElement("div");
             postInfo.classList.add('flex')
+
             postInfo.innerHTML = `
             <div  class="flex ">
                 <div class="bg-slate-100 shadow-xl rounded-2xl flex gap-5 border p-5 lg:w-[550px]">
@@ -51,7 +53,7 @@ const loadAllPost = async () => {
                             </div>
                         <!-- read post -->
                         <div>
-                            <button onclick="check(${post.id})" class ="btn"><i class="fa-regular fa-envelope text-2xl"></i></button>    
+                            <button onclick="check('${post.title}', ${post.view_count})" class ="btn"><i class="fa-regular fa-envelope text-2xl"></i></button>    
                         </div>
                     </div>
                 </div>
@@ -59,30 +61,86 @@ const loadAllPost = async () => {
         </div>            
         `
         postContainer.appendChild(postInfo);
-          // active status
-          const active = document.getElementById('active')
-          const status = post.isActive
-          console.log(status)
-          if(status === true){
-            active.style.backgroundColor = "green";
-          }
-          else{
-            active.style.backgroundColor = "red";
-          }
-        //   if(status === false){
-        //       active.style.backgroundColor = "red";
-        //   }
-        
-        
-        // const readPost = document.getElementById('read-post')
+         
+       
               
     })
 }
+// ------------------------------------------------------------------------------------------------------
 
-// call function
+
+// latestPost Function
+const latestPost = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await res.json();
+    // console.log(data)
+
+    const latestPostContainer = document.getElementById('latest-post-container')
+
+    data.forEach((info) => {
+        const latestPostInfo = document.createElement("div")
+        latestPostInfo.className = "card bg-base-100 shadow-xl p-5"
+        latestPostInfo.innerHTML = `
+        <figure>
+            <img src="${info.cover_image}" alt="Shoes" />
+        </figure>
+        <div class="card-body space-y-2 p-0 pt-5">
+            <div class="flex gap-2 items-center">
+                <i class="fa-regular fa-calendar"></i>
+                <p>${info.author?.posted_date || 'No posted Date'}</p>
+            </div>
+            <p class="font-bold">${info.title}</p>
+            <p>${info.description}</p>
+            <div class="flex gap-3">
+                <div>
+                    <img class="w-12 h-12 rounded-full"
+                    src="${info.profile_image}" alt="">
+                </div>
+                <div>
+                    <h2>${info.author.name}</h2>
+                    <h2>${info.author?.designation || 'Unknown'}</h2>
+                </div>
+         </div>
+        </div>
+        `
+        latestPostContainer.appendChild(latestPostInfo)
+    })
+}
+// --------------------------------------------------------------------------------------------------
+
+
+// searchCategory function
+const searchCategory = () => {
+    const search = document.getElementById('search-field')
+    const searchText = search.value
+    console.log(searchText)
+    loadAllPost(searchText)
+
+}
+
+
+// function calling
+
 loadAllPost()
 
-// read info function check call
-const check = (id) =>{
-            console.log(id)
-         } 
+
+latestPost()
+
+
+let count = 0;
+const check = (title, view) =>{
+    const readPost = document.getElementById('read-post')
+    const readInfo = document.createElement("div");
+        readInfo.className = "flex justify-between p-5 rounded-2xl shadow-xl bg-white m-2"
+        readInfo.innerHTML = `
+        <h2>"${title}"</h2>
+        <div class="flex gap-2 items-center">
+            <i class="fa-solid fa-eye"></i>
+            <p>${view}</p>
+        </div>
+    `
+    readPost.appendChild(readInfo)    
+    count++;
+    const countRead = document.getElementById('count-read');
+    countRead.textContent = (count)    
+    } 
