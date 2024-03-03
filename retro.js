@@ -1,5 +1,8 @@
 // loadAllPost function
 const loadAllPost = async (searchText) => {
+    const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden")
+
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
     const data = await res.json();
     const posts = data.posts
@@ -10,6 +13,7 @@ const loadAllPost = async (searchText) => {
     
 
     posts.forEach((post) => {
+            spinner.classList.add('hidden')
             // console.log(post)
             const postInfo = document.createElement("div");
             postInfo.classList.add('flex')
@@ -114,14 +118,17 @@ const searchCategory = () => {
     const search = document.getElementById('search-field')
     const searchText = search.value
     console.log(searchText)
-    loadAllPost(searchText)
-
+    if(searchText   ){
+        loadAllPost(searchText)
+    }
+    else{
+        alert("PLease Enter Category Name")
+    }
 }
 
 
 // function calling
-
-loadAllPost()
+loadAllPost('comedy')
 
 
 latestPost()

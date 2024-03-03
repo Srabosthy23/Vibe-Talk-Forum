@@ -50,7 +50,8 @@
                     <div>
                         <input id="search-field" class="p-3 rounded-l-full rounded-r-full w-1/2" type="text"
                             placeholder="Search category">
-                        <button onclick="searchCategory()" class="btn btn-info w-32 text-white rounded-l-full rounded-r-full">Search</button>
+                        <button onclick="searchCategory()"
+                            class="btn btn-info w-32 text-white rounded-l-full rounded-r-full">Search</button>
                     </div>
                 </div>
                 <!-- right side -->
@@ -85,11 +86,19 @@
                     that transcends time. Here, enthusiasts from across the digital landscape converge to explore the
                     treasures of bygone eras.</p>
             </div>
+
+
+            <!-- loading section -->
+            <div id="spinner" class="hidden text-center mt-5 text-accent ">
+                <span class="loading loading-ring loading-lg w-16"></span>
+            </div>
+
+
             <!-- dynamically will add -->
             <div class="mt-8 lg:flex justify-around">
                 <!-- left side -->
                 <div id="post-container" class="space-y-10">
-                   
+
                 </div>
                 <!-- right side -->
                 <!-- bg-slate-100 shadow-xl flex-none items-start content-start -->
@@ -137,7 +146,7 @@
             </div>
             <!-- card dynamically -->
             <div id="latest-post-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                
+
             </div>
         </section>
     </main>
